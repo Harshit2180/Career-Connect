@@ -23,7 +23,7 @@ function Signup() {
     file: ""
   });
 
-  const {loading} = useSelector(store => store.auth)
+  const { loading } = useSelector(store => store.auth)
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
