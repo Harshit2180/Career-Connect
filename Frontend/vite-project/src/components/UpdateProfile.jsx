@@ -5,7 +5,11 @@ import { Label } from './ui/label'
 import { Input } from './ui/input'
 import { Button } from './ui/button'
 import { Loader2 } from 'lucide-react'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
+import axios, { toFormData } from 'axios'
+import { USER_API_END_POINT } from '@/utils/constant'
+import { setUser } from '@/redux/authSlice'
+import { toast } from 'sonner'
 
 function UpdateProfile({ open, setOpen }) {
 
@@ -20,11 +24,13 @@ function UpdateProfile({ open, setOpen }) {
         file: user?.profile?.resume
     });
 
+    const dispatch = useDispatch();
+
     const changeEventHandler = (e) => {
         setInput({ ...input, [e.target.name]: e.target.value });
     }
 
-    const submitHandler = (e) => {
+    const submitHandler = async (e) => {
         e.preventDefault();
         const formData = new FormData();
         formData.append("fullName", input.fullName);
@@ -35,7 +41,23 @@ function UpdateProfile({ open, setOpen }) {
         if (input.file) {
             formData.append("file", input.file)
         }
+        try {
+            const res = await axios.post(`${USER_API_END_POINT}/profile/update`, formData, {
+                headers: {
+                    "Content-Type": 'multipart/form-data'
+                },
+                withCredentials: true
+            });
+            if (res.data.success) {
+                dispatch(setUser(res.data.user));
+                toast.success(res.data.message);
+            }
+        } catch (error) {
+            console.log(error)
+            toast.error(error.response.data.message)
+        }
 
+        setOpen(false);
         console.log(input);
     }
 
