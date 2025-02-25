@@ -53,7 +53,7 @@ function Profile() {
                 <div className='grid w-full max-w-sm items-center gap-1.5'>
                     <Label className='text-md font-bold'>Resume</Label>
                     {
-                        isResume ? <a target="_blank" className='text-blue-500 w-full hover:underline cursor-pointer' href="https://www.linkedin.com/in/harshit-chopra-hc/">{user?.profile?.resumeOriginalName}</a> : <span>NA</span>
+                        isResume ? <a target="_blank" className='text-blue-500 w-full hover:underline cursor-pointer' href={user?.profile?.resume}>{user?.profile?.resumeOriginalName}</a> : <span>NA</span>
                     }
                 </div>
             </div>
