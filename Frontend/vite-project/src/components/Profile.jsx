@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Navbar from './shared/Navbar'
 import { Avatar, AvatarImage } from './ui/avatar'
 import { Contact, Mail, Pen } from 'lucide-react'
@@ -7,6 +7,7 @@ import { Label } from './ui/label'
 import AppliedJobTable from './AppliedJobTable'
 import UpdateProfile from './UpdateProfile'
 import { useSelector } from 'react-redux'
+import { Button } from './ui/button'
 
 const isResume = true;
 // const skills = ["HTML", "CSS", "JS", "React", "NodeJS"]
