@@ -8,6 +8,7 @@ import AppliedJobTable from './AppliedJobTable'
 import UpdateProfile from './UpdateProfile'
 import { useSelector } from 'react-redux'
 import { Button } from './ui/button'
+import useGetAppliedJobs from '@/hooks/useGetAppliedJobs'
 
 const isResume = true;
 // const skills = ["HTML", "CSS", "JS", "React", "NodeJS"]
@@ -16,6 +17,7 @@ function Profile() {
 
     const [open, setOpen] = useState(false)
     const { user } = useSelector(store => store.auth)
+    useGetAppliedJobs();
 
     return (
         <div>
