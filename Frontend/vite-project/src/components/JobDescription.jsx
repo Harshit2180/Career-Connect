@@ -11,11 +11,11 @@ import { toast } from 'sonner';
 
 function JobDescription() {
 
+    const { singleJob } = useSelector(store => store.job)
+    const { user } = useSelector(store => store.auth)
     const isInitiallyApplied = singleJob?.applications?.some(application => application.applicant === user?._id) || false;
     const params = useParams();
     const jobId = params.id;
-    const { singleJob } = useSelector(store => store.job)
-    const { user } = useSelector(store => store.auth)
     const dispatch = useDispatch();
 
     const [isApplied, setIsApplied] = useState(isInitiallyApplied);

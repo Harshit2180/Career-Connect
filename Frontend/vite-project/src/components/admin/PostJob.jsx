@@ -100,7 +100,7 @@ function PostJob() {
                             <Input type="number" name="position" onChange={changeEventHandler} value={input.position} className='focus-visible:ring-offset-0 focus-visible:ring-0 my-1' />
                         </div>
                         {
-                            companies.lenght > 0 && (
+                            companies.length > 0 && (
                                 <Select onValueChange={selectChangeHandler}>
                                     <SelectTrigger className="w-[180px]">
                                         <SelectValue placeholder="Select a company" />

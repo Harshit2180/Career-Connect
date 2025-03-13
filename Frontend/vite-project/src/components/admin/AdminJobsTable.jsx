@@ -48,7 +48,7 @@ function AdminJobsTable() {
                                                 <Edit2 onClick={() => navigate(`/admin/companies/${job._id}`)} className='w-4' />
                                                 <span>Edit</span>
                                             </div>
-                                            <div onClick={() => navigate(`admin/jobs/${job._id}/applicants`)} className='flex items-center w-fit gap-2 cursor-pointer mt-2'>
+                                            <div onClick={() => navigate(`/admin/jobs/${job._id}/applicants`)} className='flex items-center w-fit gap-2 cursor-pointer mt-2'>
                                                 <Eye />
                                                 <span>Applicants</span>
                                             </div>

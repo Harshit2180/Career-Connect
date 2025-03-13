@@ -32,7 +32,7 @@ function CompanySetup() {
     }
 
     const changeFileHandler = (e) => {
-        const file = e.targer.files?.[0];
+        const file = e.target.files?.[0];
         setInput({ ...input, file })
     }
 
