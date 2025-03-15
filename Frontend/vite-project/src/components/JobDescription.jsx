@@ -61,7 +61,7 @@ function JobDescription() {
                         <Badge className='text-[#7209B7] font-bold' variant="ghost">{singleJob?.salary} LPA</Badge>
                     </div>
                 </div>
-                <Button onClick={isApplied ? null : applyJobHandler} diabled={isApplied} className={`rounded-lg ${isApplied ? 'bg-gray-600 cursor-not-allowed' : 'bg-[#5F178F] hover:bg-[#5F32AD]'}`}>{isApplied ? 'Already Applied' : 'Apply Now'}</Button>
+                <Button onClick={isApplied ? null : applyJobHandler} disabled={isApplied} className={`rounded-lg ${isApplied ? 'bg-gray-600 cursor-not-allowed' : 'bg-[#5F178F] hover:bg-[#5F32AD]'}`}>{isApplied ? 'Already Applied' : 'Apply Now'}</Button>
             </div>
             <h1 className='border-b-2 border-b-gray-300 font-medium py-4'>Job Description</h1>
             <div className='my-4'>

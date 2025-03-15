@@ -41,8 +41,7 @@ function CompanySetup() {
         const formData = new FormData();
         formData.append("name", input.name);
         formData.append("description", input.description);
-        formData.append("website", input.name);
-        formData.append("name", input.website);
+        formData.append("website", input.website);
         formData.append("location", input.location);
 
         if (input.file) {

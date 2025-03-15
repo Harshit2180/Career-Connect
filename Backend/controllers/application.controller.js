@@ -104,7 +104,7 @@ export const getApplicants = async (req, res) => {
 export const updateStatus = async (req, res) => {
     try {
         const { status } = req.body;
-        const applicationId = req.param.id;
+        const applicationId = req.params.id;
         if (!status) {
             return res.status(400).json({
                 message: "Status is required",

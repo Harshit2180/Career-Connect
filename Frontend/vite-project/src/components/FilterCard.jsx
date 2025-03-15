@@ -37,14 +37,14 @@ function FilterCard() {
       <RadioGroup value={selectedValue} onValueChange={changeHandler}>
         {
           filterData.map((data, index) => (
-            <div>
+            <div key={index}>
               <h1 className='font-bold text-lg'>{data.filterType}</h1>
               {
                 data.array.map((item, idx) => {
                   const itemId = `id${index}-${idx}`
                   return (
-                    <div className='flex items-center space-x-2 my-2'>
-                      <RadioGroupItem value={item} id={item} />
+                    <div key={itemId} className='flex items-center space-x-2 my-2'>
+                      <RadioGroupItem value={item} id={itemId} />
                       <Label htmlFor={itemId}>{item}</Label>
                     </div>
                   )
